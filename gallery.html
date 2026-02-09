@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malcolm’s Photos - Gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* BODY & COLORS */
+    body { 
+      font-family: Arial, sans-serif; 
+      background: linear-gradient(135deg, #141e30, #243b55, #0f2027, #203a43);
+      color: #fff; 
+      line-height: 1.6; 
+    }
+    :root {
+      --primary: #d35400;
+      --secondary: #f39c12;
+    }
+
+    /* HEADER */
+    .header { background: rgba(0,0,0,0.6); padding: 20px; }
+    .nav-section { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .brand-name { font-size: 24px; font-weight: bold; color: var(--primary); letter-spacing: 1px; }
+    .top-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 15px; }
+    .top-nav ul li a { text-decoration: none; color: #bbb; font-weight: 500; transition: 0.3s; }
+    .top-nav ul li a:hover, .top-nav ul li a.active { color: #fff; }
+    .navBtn { display: none; font-size: 1.6rem; cursor: pointer; color: var(--primary); }
+
+    /* ABOUT */
+    .about { text-align: center; padding: 50px 20px; max-width: 900px; margin: auto; }
+    .about-img img { width: 180px; border-radius: 50%; margin-bottom: 15px; border: 4px solid var(--secondary); }
+    .about h2 { margin: 10px 0; color: var(--primary); }
+    .about h3 { font-weight: normal; color: #bbb; }
+    blockquote { margin: 20px auto; font-style: italic; max-width: 700px; color: #ccc; }
+
+    /* SOCIAL ICONS */
+    .social-icons ul { display: flex; justify-content: center; gap: 20px; list-style: none; margin-top: 15px; }
+    .social-icons ul li a { color: var(--primary); font-size: 22px; transition: color 0.3s; }
+    .social-icons ul li a:hover { color: var(--secondary); }
+
+    /* GALLERY */
+    .gallery-section { padding: 40px 20px; text-align: center; }
+    .gallery-section h2 { font-size: 28px; color: var(--secondary); margin-bottom: 30px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .single-img { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    .single-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .single-img:hover img { transform: scale(1.08); }
+    .single-img h3 {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 10px; font-size: 16px; color: #fff;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .single-img input[type="file"] { display: none; }
+
+    /* Add new photo label */
+    .file-label {
+      background: var(--primary);
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      margin-left: 10px;
+      transition: 0.3s;
+    }
+    .file-label:hover { background: var(--secondary); }
+
+    /* FOOTER */
+    footer { background: rgba(0,0,0,0.7); padding: 40px 20px; text-align: center; margin-top: 50px; }
+    footer h3, footer h4 { color: var(--primary); margin-bottom: 10px; }
+    .footer-container { max-width: 1000px; margin: auto; display: grid; gap: 20px; }
+    .subs { display: flex; justify-content: center; margin-top: 15px; }
+    .subs input {
+      padding: 10px; border: none; outline: none; width: 220px; border-radius: 5px 0 0 5px;
+    }
+    .subs button {
+      padding: 10px 15px; border: none; background: var(--secondary);
+      color: #fff; cursor: pointer; border-radius: 0 5px 5px 0; transition: 0.3s;
+    }
+    .subs button:hover { background: var(--primary); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .top-nav ul {
+        position: absolute; top: 65px; left: -100%;
+        flex-direction: column; width: 100%; background: rgba(0,0,0,0.9);
+        text-align: center; padding: 20px 0; transition: 0.3s;
+      }
+      .top-nav ul.active { left: 0; }
+      .navBtn { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="nav-section">
+      <span class="brand-name">MALCOLM’s_PHOTOS</span>
+      <nav class="top-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="learn.html">To Learn</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <span class="navBtn"><i class="fas fa-bars"></i></span>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-img">
+      <img src="PHOTOS/409aa118-d7c9-4542-9ef5-7dd797de4d64.jpeg" alt="Photographer">
+    </div>
+    <h2>Malcolm Lismore</h2>
+    <h3>Professional Photographer</h3>
+    <blockquote>
+      "Photography is the art of creating images by recording light."<br><br>
+      "Videography captures moving images on electronic media." <br><span>- Wikipedia -</span>
+    </blockquote>
+    <div class="social-icons">
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <h2>My Work</h2>
+    <div class="gallery">
+      <div class="single-img"><img src="PHOTOS/elvis-bekmanis-RXFwMWhcOi0-unsplash.jpg" alt=""><h3>Wedding Photography</h3></div>
+      <div class="single-img"><img src="PHOTOS/michael-henry-5OyGRn_r9Y4-unsplash.jpg" alt=""><h3>Landscape Photography</h3></div>
+      <div class="single-img"><img src="PHOTOS/dom-hill-nimElTcTNyY-unsplash.jpg" alt=""><h3>Fashion Photography</h3></div>
+      <div class="single-img"><img src="PHOTOS/roberto-rendon-pP-9X7WgHkI-unsplash.jpg" alt=""><h3>Event Photography</h3></div>
+      <div class="single-img"><img src="PHOTOS\Stanislav Kondrashov analyses the mechanics of….jpeg" alt=""><h3>Fine Art Photography</h3></div>
+      <div class="single-img"><img src="PHOTOS/pablo-soriano-Qe5DTJKYM8I-unsplash.jpg" alt=""><h3>Portrait Photography</h3></div>
+      <div class="single-img"><img src="PHOTOS/robbyansyah-dewantoro-lRddk1UWn1c-unsplash.jpg" alt=""><h3>Nature Photography</h3></div>
+      <div class="single-img"><img src="PHOTOS/brooke-lark-1Rm9GLHV0UA-unsplash.jpg" alt=""><h3>Food Photography</h3></div>
+      <div class="single-img"><img src="PHOTOS/luis-santoyo-PyrGf0umVt4-unsplash.jpg" alt=""><h3>Sports Photography</h3></div>
+      <div class="single-img">
+        <img src="PHOTOS/1bb56d44-9120-4769-bf08-c6e615f4050d.jpeg" alt="">
+        <h3>Add New Photo 
+          <label class="file-label">Browse
+            <input type="file" name="myfile">
+          </label>
+        </h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h4>I am excited about turning your special occasions into visual masterpieces!</h4>
+        <p>Capturing light, moments, and stories that last forever.</p>
+      </div>
+      <div>
+        <h3>Let's embark on this visual journey together!</h3>
+        <p>Explore my portfolio, where moments come alive in frames and reels.</p>
+        <h3>Subscribe Us!</h3>
+        <div class="subs">
+          <input type="email" placeholder="Email Address">
+          <button>Enter</button>
+        </div>
+      </div>
+    </div>
+    <p>Created by Malcolm Lismore | &copy; 2024 All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navBtn = document.querySelector('.navBtn');
+    const navMenu = document.querySelector('.top-nav ul');
+    navBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

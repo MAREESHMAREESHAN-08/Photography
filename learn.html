@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>To Learn - Malcolm’s Photos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* BODY & GRADIENT */
+    body { 
+      font-family: "Segoe UI", Arial, sans-serif; 
+      background: linear-gradient(135deg, #141e30, #243b55, #0f2027, #203a43);
+      color: #fff; 
+      line-height: 1.6; 
+    }
+
+    /* HEADER */
+    .header { background: rgba(0,0,0,0.6); padding: 20px; position: relative; }
+    .nav-section { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .brand-name { font-size: 24px; font-weight: bold; color: #ff4c29; letter-spacing: 1px; }
+    .top-nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+    .top-nav ul li { margin: 0 12px; }
+    .top-nav ul li a { text-decoration: none; color: #bbb; font-weight: 500; transition: 0.3s; }
+    .top-nav ul li a:hover, .top-nav ul li a.active { color: #fff; }
+    .menu-btn { display: none; font-size: 24px; color: #fff; cursor: pointer; }
+
+    /* ABOUT */
+    .about { text-align: center; padding: 30px 20px; }
+    .about-img img { width: 160px; border-radius: 50%; margin-bottom: 15px; border: 3px solid #ff4c29; }
+    blockquote { margin: 20px auto; max-width: 700px; font-style: italic; color: #ccc; }
+
+    /* SOCIAL */
+    .social-icons ul { display: flex; justify-content: center; margin: 20px 0; list-style: none; }
+    .social-icons ul li { margin: 0 10px; }
+    .social-icons ul li a { color: #bbb; font-size: 22px; transition: 0.3s; }
+    .social-icons ul li a:hover { color: #ff4c29; }
+
+    /* TO LEARN SECTION */
+    .section-four { padding: 50px 20px; }
+    .to-learn-wrapper-lg { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .to-learn { background: rgba(0,0,0,0.5); border-radius: 12px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+    .to-learn:hover { transform: translateY(-6px); box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+    .to-learn img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .to-learn-content { padding: 18px; }
+    .badge { background: #ff4c29; color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+    .misc-info { display: block; font-size: 12px; color: #aaa; margin: 8px 0 12px; }
+    .to-learn-title { font-size: 20px; margin-bottom: 10px; color: #fff; font-weight: bold; }
+    .to-learn-text { font-size: 14px; color: #ccc; margin-bottom: 15px; line-height: 1.5; }
+    .btn { display: inline-block; padding: 8px 16px; background: #ff4c29; color: #fff; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold; transition: 0.3s; }
+    .btn:hover { background: #e03e1f; }
+
+    /* FOOTER */
+    .footer { background: rgba(0,0,0,0.6); padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .footer-container { display: grid; gap: 25px; max-width: 900px; margin: auto; }
+    .subs { display: flex; justify-content: center; margin-top: 10px; }
+    .subs input { padding: 8px; border: none; outline: none; border-radius: 4px 0 0 4px; }
+    .subs button { padding: 8px 15px; border: none; background: #ff4c29; color: #fff; cursor: pointer; border-radius: 0 4px 4px 0; }
+    .subs button:hover { background: #e03e1f; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-section { flex-direction: row; justify-content: space-between; align-items: center; }
+      .top-nav { display: none; width: 100%; }
+      .top-nav ul { flex-direction: column; text-align: center; margin-top: 10px; }
+      .top-nav ul li { margin: 10px 0; }
+      .menu-btn { display: block; }
+      .top-nav.active { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="nav-section">
+      <span class="brand-name">MALCOLM’s_PHOTOS</span>
+      <span class="menu-btn"><i class="fas fa-bars"></i></span>
+      <nav class="top-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="learn.html" class="active">To Learn</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="about">
+      <div class="about-img">
+        <img src="PHOTOS/409aa118-d7c9-4542-9ef5-7dd797de4d64.jpeg" alt="Photographer">
+      </div>
+      <h2>Malcolm Lismore</h2>
+      <h3>Hey, I’m a Professional Photographer</h3>
+
+      <!-- Social Icons under name -->
+      <div class="social-icons">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+      </div>
+
+      <blockquote>
+        "Photography is the art, application, and practice of creating images by
+        recording light, either electronically using an image sensor, or chemically 
+        using a light-sensitive material such as photographic film."<br><br>
+        "Videography is the process of capturing moving images on electronic media
+        and even streaming media. The term includes methods of video production and 
+        post-production." <br>
+        <span>- Wikipedia -</span>
+      </blockquote>
+    </div>
+  </header>
+
+  <!-- TO LEARN SECTION -->
+  <section class="section-four">
+    <div class="to-learn-wrapper-lg">
+
+      <div class="to-learn">
+        <img src="PHOTOS/kameron-kincade-CnVWM7rIM-E-unsplash.jpg" alt="">
+        <div class="to-learn-content">
+          <span class="badge">Photography</span>
+          <span class="misc-info">Published: 1 Month Ago | 89M Likes | 2K Comments | 100k Views</span>
+          <h3 class="to-learn-title">Best Photography Tips For Beginners</h3>
+          <p class="to-learn-text">Learn step by step photography essentials designed for beginners to quickly improve their shots.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="to-learn">
+        <img src="PHOTOS/marco-xu-P1GL_FSF8po-unsplash.jpg" alt="">
+        <div class="to-learn-content">
+          <span class="badge">Videography</span>
+          <span class="misc-info">Published: 8 Months Ago | 12K Likes | 33K Comments | 112k Views</span>
+          <h3 class="to-learn-title">Best Videography Tips For Beginners</h3>
+          <p class="to-learn-text">A beginner-friendly videography course covering camera basics, angles, and editing tricks.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="to-learn">
+        <img src="PHOTOS/andre-furtado-JtV6zyOZSrA-unsplash.jpg" alt="">
+        <div class="to-learn-content">
+          <span class="badge">Photography</span>
+          <span class="misc-info">Published: 10 Months Ago | 52K Likes | 3K Comments | 102k Views</span>
+          <h3 class="to-learn-title">Photography Tips For Undergraduates</h3>
+          <p class="to-learn-text">Go beyond basics with advanced photography lessons perfect for undergraduate learners.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="to-learn">
+        <img src="PHOTOS/erik-mclean-9XK7vgoGSgc-unsplash.jpg" alt="">
+        <div class="to-learn-content">
+          <span class="badge">Videography</span>
+          <span class="misc-info">Published: 1 Year Ago | 82K Likes | 45K Comments | 107k Views</span>
+          <h3 class="to-learn-title">Videography Tips For Undergraduates</h3>
+          <p class="to-learn-text">Learn advanced videography skills to take your storytelling and production quality to the next level.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <h4><i>I am excited about turning your special occasions into everlasting visual masterpieces!</i></h4>
+        <p>My approach is not just about technical expertise; it's about understanding the nuances of each moment, 
+        the play of light and shadow, and the rhythm that makes every story unique.</p>
+      </div>
+      <div>
+        <h3><i>Let's embark on this visual journey together!</i></h3>
+        <p>Feel free to explore my portfolio, where moments come to life in both frames and reels.</p>
+        <h3>Subscribe Us!</h3>
+        <div class="subs">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email Address">
+          <button>Enter</button>
+        </div>
+      </div>
+    </div>
+    <p>Created by Malcolm Lismore | &copy; 2024 All rights reserved.</p>
+  </footer>
+
+  <!-- JS for menu toggle -->
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const nav = document.querySelector('.top-nav');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
